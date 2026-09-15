@@ -3,7 +3,7 @@ import random
 class Hero:
     """The hero blueprint will be implemented later in the project."""
 
-    def _nit_(self, name):
+    def __init__(self, name):
         self.name = name
         self.health = 100
         self.attack_power = 10
@@ -18,6 +18,6 @@ class Hero:
     def is_alive(self):
         return self.health > 0
 
-    def enterance(self):
+    def entrance(self):
         print("The hero is on his way")
         print("═════════════════════")
