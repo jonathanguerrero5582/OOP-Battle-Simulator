@@ -18,13 +18,13 @@ def main():
     
     print("But no hero has answered the call... yet.")
 
-if __name__ == "__main__":
-    hero = Hero("Key")
-    print(f"{hero.name} enters the arena with {hero.health} health.")
-    entrance()
-    attack1 = goblin.attack()
-    goblin.health - attack
-    attack2 = goblin.attack()
-    hero.health - attack
+    if __name__ == "__main__":
+        hero = Hero("Key")
+        print(f"{hero.name} enters the arena with {hero.health} health.")
+        hero.entrance()
+        attack1 = goblin.attack()
+        goblin.take_damage(attack1)
+        attack2 = goblin.attack()
+        hero.take_damage(attack2)
 main()
 
