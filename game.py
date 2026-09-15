@@ -3,6 +3,18 @@ from hero import Hero
 
 ARENA_NAME = "JB's Circle"
 
+def battle(hero: Hero, enemy: Goblin):
+    while hero.is_alive() and enemy.is_alive():
+        hero_damage = hero.attack()
+        enemy.take_damage(hero_damage)
+        if enemy.is_alive():
+            enemy_damage = enemy.attack()
+            hero.take_damage(enemy_damage)    
+
+    if hero.is_alive():
+        print(f"{hero.name} wins!")    
+    else:
+        print(f"{enemy.name} wins!")    
 
 def main():
     """Open the arena and introduce its first opponent."""
@@ -17,14 +29,10 @@ def main():
     print(f"{goblin2.name} enters the arena with {goblin2.health} health.")
     
     print("But no hero has answered the call... yet.")
+    bob = Hero("bobbert")
+    print(f"{goblin.name} enters the arena with {goblin.health} health.")
+    battle(bob, goblin)
 
-    if __name__ == "__main__":
-        hero = Hero("Key")
-        print(f"{hero.name} enters the arena with {hero.health} health.")
-        hero.entrance()
-        attack1 = goblin.attack()
-        goblin.take_damage(attack1)
-        attack2 = goblin.attack()
-        hero.take_damage(attack2)
-main()
+if __name__ == "__main__":
+    main()
 

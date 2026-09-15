@@ -12,7 +12,9 @@ class Hero:
         return random.randint(1, self.attack_power)
 
     def take_damage(self, damage):
-        self.health = max(0, self.health - damage)
+        self.health = self.health - damage
+        if self.health < 0:
+            self.health = 0
         print(f"{self.name} takes {damage} damage. Health: {self.health}")
 
     def is_alive(self):
@@ -21,3 +23,4 @@ class Hero:
     def entrance(self):
         print("The hero is on his way")
         print("═════════════════════")
+
