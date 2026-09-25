@@ -1,9 +1,10 @@
 from goblin import Goblin
 from hero import Hero
+from boss import Boss
 
 ARENA_NAME = "JB's Circle"
 
-def battle(hero: Hero, enemy: Goblin):
+def battle(hero: Hero, enemy: Goblin, boss: Boss):
     while hero.is_alive() and enemy.is_alive():
         hero_damage = hero.attack()
         enemy.take_damage(hero_damage)
@@ -31,7 +32,9 @@ def main():
     print("But no hero has answered the call... yet.")
     bob = Hero("bobbert")
     print(f"{goblin.name} enters the arena with {goblin.health} health.")
-    battle(bob, goblin)
+
+    boss = Boss("Rick")
+    battle(bob, boss)
 
 if __name__ == "__main__":
     main()
